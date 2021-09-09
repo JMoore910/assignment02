@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 import static java.lang.Double.parseDouble;
 
@@ -16,6 +17,7 @@ public class Solution14 {
             -a tax of 5.5% should be applied to the order
             -The Application outputs a subtotal, and a tax
         -the order total is then printed
+        -use some other method to round instead of BigDecimal
          */
         Scanner input = new Scanner(System.in);
         String state;
@@ -25,11 +27,17 @@ public class Solution14 {
         System.out.printf("What is the state? ");
         state = input.nextLine();
         total = subtotal;
-        if (state == "WI"){
-            tax = subtotal * tax;
+        String output;
+        output = "";
+        if (state.contains("WI")==true){
+            tax *= subtotal;
+            total = subtotal + tax;
 
-            BigDecimal fin = new BigDecimal("12");
-            System.out.println("The subtotal is $"+String.format("%.2f",subtotal)+"\nThe tax is ");
+            //finTax = finTax.setScale(2,RoundingMode.CEILING);
+            output = ("The subtotal is $" + String.format("%.2f",subtotal));
+            output = output.concat(".\nThe tax is $" + String.format("%.2f.\n",tax));
         }
+        output = output.concat("The total is $" + String.format("%.2f.",Math.ceil(total*100)/100));
+        System.out.println(output);
     }
 }
