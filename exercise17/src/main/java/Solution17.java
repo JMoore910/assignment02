@@ -58,11 +58,9 @@ public class Solution17 {
         else
             throw new IllegalArgumentException("Must enter a number");
 
-        BAC = ((A * 5.14) / (W * r)) - (0.015 * H);
-        //BAC /= (W * r);
-        //BAC -= (0.015 * H);
+        BAC = (A * 5.14 / W * r) - (0.015 * H);
 
         String output = BAC < 0.08 ? "\nIt is legal for you to drive." : "\nIt is not legal for you to drive.";
-        System.out.println("Your BAC is "+ BAC + output);
+        System.out.println("Your BAC is "+ String.format("%.6f.",BAC) + output);
     }
 }
