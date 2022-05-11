@@ -19,14 +19,22 @@ public class Solution11 {
         -Use a single output statement
         -Use BigDecimal rounding from Chapter 8 to get proper output
          */
+        
+        //  Use a scanner as input to take in the number of euros user is exchanging
         Scanner input = new Scanner(System.in);
         double euro,rate,usd;
+        
+        //  Take in amount exchanging as well as the exchange rate
         System.out.printf("How many euros are you exchanging? ");
         euro = parseDouble(input.nextLine());
         System.out.printf("What is the exchange rate? ");
         rate = parseDouble(input.nextLine());
+        
+        //  Calculate the amount the exchanged euros will be in USD
         usd = euro * rate;
         BigDecimal ex = new BigDecimal(usd);
+        
+        //  Use BigDecimal rounding to get the calculation rounded up to the next cent, then print out euros and exchange rate to USD
         ex = ex.setScale(2,RoundingMode.CEILING);
         System.out.println(String.format("%.2f",euro)+" euros at an exchange rate of "+rate+" is \n"+ex+" U.S. dollars.");
     }
