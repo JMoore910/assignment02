@@ -16,10 +16,13 @@ public class Solution16 {
            output and tell the user whether they can legally drive or not
            -String x = i1>i2 ? "this is x if true" : "this is x if false";
          */
+        
+        //  Use scanner to get user age as input
         Scanner input = new Scanner(System.in);
         int userAge,driveAge=16;
         System.out.printf("What is your age? ");
         userAge = parseInt(input.nextLine());
+        //  Use drive age to determine whether to say whether the user is old enough to drive or not
         String output = userAge>=driveAge ? "You are old enough to legally drive." : "You are not old enough to legally drive.";
         System.out.println(output);
     }
