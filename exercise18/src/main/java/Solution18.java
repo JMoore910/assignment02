@@ -15,14 +15,18 @@ public class Solution18 {
         -Application prompts user for C or F to be input
         -use if statements to determine which conversion to perform
          */
+        
+        //  Use scanner to take in the ;etter of whether you want to convert from Celcius to Fahrenheit or vice versa
         Scanner input = new Scanner(System.in);
         String outStr = " if you would like to convert from ",F = " Fahrenheit",C = " Celsius";
         System.out.printf("Enter 'C'"+outStr+F+" to"+C+"\nEnter 'F'"+outStr+C+" to"+F+"\nYour Choice: ");
         String tempStr = input.nextLine();
 
+        //  Take in a temperature to convert
         System.out.printf("Enter a temperature: ");
         double tempVal = parseDouble(input.nextLine());
 
+        //  Calculate conversion of temperature given the letter input
         if (tempStr.equals("C") || tempStr.equals("c") || tempStr.equals("F") || tempStr.equals("f")){
             if (tempStr.equals("C") || tempStr.equals("c")) {
                 tempVal = (tempVal - 32) * (5.0 / 9);
@@ -33,6 +37,7 @@ public class Solution18 {
                 tempStr = F;
             }
         }
+        //  Output the temperature conversion
         System.out.println("The temperature in" + tempStr + " is " + String.format("%.1f.",tempVal));
     }
 }
