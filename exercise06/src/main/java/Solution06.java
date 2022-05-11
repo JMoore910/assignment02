@@ -21,15 +21,21 @@ public class Solution06 {
             -Application fetches current date using local
             -current year and year of retirement are then output
          */
+        
+        //  Create a calendar and use built in type to store current date
         Calendar now = Calendar.getInstance();
         Scanner input = new Scanner(System.in);
         int curAge,retAge,curYear,ageDif;
         curYear = now.get(Calendar.YEAR);
+        
+        //  Take user's age and desired age to retire at
         System.out.printf("What is your current age? ");
         curAge = parseInt(input.nextLine());
         System.out.printf("At what age would you like to retire? ");
         retAge = parseInt(input.nextLine());
         ageDif = retAge - curAge;
+        
+        //  Calculate and output the number of years the user has until retirement from the current year
         System.out.println("You have " + ageDif + " years left to retire.");
         System.out.println("It's " + curYear + ", so you can retire in " + (curYear+ageDif) + ".");
     }
