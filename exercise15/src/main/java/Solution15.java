@@ -15,13 +15,19 @@ public class Solution15 {
          -otherwise
                 output "I don't know you."
          */
+        
+        //  Uses scanner to input to take in a username and password
         Scanner input = new Scanner(System.in);
         String myName = "Jeanne", myPass = "abc$123";
         String userN,passW;
+        
+        //  Take in a username and password
         System.out.printf("What is your username? ");
         userN = input.nextLine();
         System.out.printf("What is the password? ");
         passW = input.nextLine();
+        
+        //  Check through stringmatching whether the username and password match what is saved
         if (userN.equals(myName) && passW.equals(myPass))
             System.out.println("Welcome!");
         else
